@@ -21,4 +21,6 @@ from food import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main, name='main'),
+    # food related urls
+    # user related urls
 ]

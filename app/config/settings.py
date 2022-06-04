@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     ## start app
     'food',
+    'user',
 ]
 
 MIDDLEWARE = [
