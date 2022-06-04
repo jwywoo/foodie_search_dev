@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 # showing the main page
 def main(request):
-    return render(request, 'main.html', {})
+    return render(request, 'food/main.html', {})
 
 
 def searching_foods(request):
