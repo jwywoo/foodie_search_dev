@@ -5,39 +5,18 @@
 <div class="row">
     <div class="col-sm">
         <h3>Here is the input</h3>
-        <form actoin="" method="POST">
+        <form actoin="{% url 'food:searching-food' %}" method="post">
             {% csrf_token %}
             <div class="row">
-                <div class="col-sm">
-                    <h5>Choice1</h5>
-                    <select class="selectpicker" id="choice1">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Barbecue</option>
-                    </select>
-                </div>
-                <div class="col-sm">
-                    <h5>Choice1</h5>
-                    <select class="selectpicker" id="choice2">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Barbecue</option>
-                    </select>
-                </div>
-                <div class="col-sm">
-                    <h5>Choice1</h5>
-                    <select class="selectpicker" id="choice3">
-                        <option>Mustard</option>
-                        <option>Ketchup</option>
-                        <option>Barbecue</option>
-                    </select>
-                </div>
+                <h1>Fuck</h1>
+                <input id="test_input">
             </div>
             <input type="submit" value="Search">
         </form>
     </div>
     <div class="col-sm">
         <h3>Here is the output</h3>
+        <h4>1. {{ test }}</h4>
     </div>
 </div>
 {% endblock %}
