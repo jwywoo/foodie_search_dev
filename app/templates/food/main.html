@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Fuck</title>
-</head>
-<body>
+{% extends 'common_css.html'%}
+
+{% block content %}
 <h1>This is main</h1>
-</body>
-</html>
+<div class="row">
+    <div class="col-sm">
+        <h3>Here is the input</h3>
+        <form actoin="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm">
+                    <h5>Choice1</h5>
+                    <select class="selectpicker" id="choice1">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Barbecue</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <h5>Choice1</h5>
+                    <select class="selectpicker" id="choice2">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Barbecue</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <h5>Choice1</h5>
+                    <select class="selectpicker" id="choice3">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Barbecue</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div class="col-sm">
+        <h3>Here is the output</h3>
+    </div>
+</div>
+{% endblock %}

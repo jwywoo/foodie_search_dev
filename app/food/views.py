@@ -8,7 +8,7 @@ def main(request):
     return render(request, 'food/main.html', {})
 
 
-def searching_foods(request):
+def searching_foods(request, user_input):
     pass
 
 
