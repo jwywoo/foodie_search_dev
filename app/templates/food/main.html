@@ -5,18 +5,58 @@
 <div class="row">
     <div class="col-sm">
         <h3>Here is the input</h3>
-        <form actoin="{% url 'food:searching-food' %}" method="post">
+        <form action="{% url 'food:searching-food'%}" method="POST">
             {% csrf_token %}
             <div class="row">
-                <h1>Fuck</h1>
-                <input id="test_input">
+                <div class="col-sm">
+                    <label for="color">Color</label>
+                    <select type="text" id="color" name="color">
+                        <option selected>GREEN</option>
+                        <option>BLUE</option>
+                        <option>RED</option>
+                        <option>ORANGE</option>
+                        <option>BLACK</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="protein">Protein</label>
+                    <select type="text" id="protein" name="protein">
+                        <option selected>GREEN</option>
+                        <option>BLUE</option>
+                        <option>RED</option>
+                        <option>ORANGE</option>
+                        <option>BLACK</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="country">Country</label>
+                    <select type="text" id="country" name="country">
+                        <option selected>GREEN</option>
+                        <option>BLUE</option>
+                        <option>RED</option>
+                        <option>ORANGE</option>
+                        <option>BLACK</option>
+                    </select>
+                </div>
             </div>
-            <input type="submit" value="Search">
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+            </div>
+            <input type="submit" value="Search"/>
         </form>
     </div>
     <div class="col-sm">
         <h3>Here is the output</h3>
-        <h4>1. {{ test }}</h4>
+        <h4>1. {{ test1 }}</h4>
+        <h4>2. {{ test2 }}</h4>
+        <h4>3. {{ test3 }}</h4>
     </div>
 </div>
 {% endblock %}

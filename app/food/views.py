@@ -9,11 +9,11 @@ def main(request):
 
 
 def searching_foods(request):
-    print(request.POST['test_input'])
     if request.method == 'POST':
-        print(request.POST['test_input'])
         context = {
-            'test': request.POST['test_input']
+            'test1': request.POST['color'],
+            'test2': request.POST['protein'],
+            'test3': request.POST['country'],
         }
         return render(request, 'food/main.html', context=context)
 
