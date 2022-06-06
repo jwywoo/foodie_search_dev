@@ -98,5 +98,18 @@ class Food(models.Model):
         choices=TYPE_CHOICES,
         default=UNDECIDED,
     )
+    # Carbohydrates
+    NOODLES = 'ND'
+    RICE = 'RE'
+    CAR_CHOICES = [
+        (NOODLES, "Noodles"),
+        (RICE, "Rice"),
+        (UNDECIDED, "Not sure"),
+    ]
+    carbohydrate = models.CharField(
+        max_length=2,
+        choices=None,
+        default=UNDECIDED,
+    )
     # list of descriptions for phase 2
     # descriptions = []

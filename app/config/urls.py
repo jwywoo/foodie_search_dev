@@ -24,5 +24,5 @@ urlpatterns = [
     # food url
     path('food/', include('food.urls')),
     # user related urls
-    # path('user/', include('user.urls')),
+    path('user/', include('user.urls')),
 ]

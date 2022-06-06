@@ -7,48 +7,109 @@
         <h3>Here is the input</h3>
         <form action="{% url 'food:searching-food'%}" method="POST">
             {% csrf_token %}
+            <!--First row of feature input-->
             <div class="row">
-                <div class="col-sm">
-                    <label for="color">Color</label>
-                    <select type="text" id="color" name="color">
-                        <option selected>GREEN</option>
-                        <option>BLUE</option>
-                        <option>RED</option>
-                        <option>ORANGE</option>
-                        <option>BLACK</option>
-                    </select>
-                </div>
-                <div class="col-sm">
-                    <label for="protein">Protein</label>
-                    <select type="text" id="protein" name="protein">
-                        <option selected>GREEN</option>
-                        <option>BLUE</option>
-                        <option>RED</option>
-                        <option>ORANGE</option>
-                        <option>BLACK</option>
-                    </select>
-                </div>
                 <div class="col-sm">
                     <label for="country">Country</label>
                     <select type="text" id="country" name="country">
-                        <option selected>GREEN</option>
-                        <option>BLUE</option>
-                        <option>RED</option>
-                        <option>ORANGE</option>
-                        <option>BLACK</option>
+                        <option selected>Not sure</option>
+                        <option>Korea</option>
+                        <option>Japan</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="color">Color</label>
+                    <select type="text" id="color" name="color">
+                        <option selected>Not sure</option>
+                        <option>Yellow</option>
+                        <option>Red</option>
+                        <option>Black</option>
+                        <option>Brown</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="taste">Taste</label>
+                    <select type="text" id="taste" name="taste">
+                        <option selected>Not sure</option>
+                        <option>Sweet</option>
+                        <option>Spicy</option>
+                        <option>Sour</option>
+                        <option>Salty</option>
+                        <option>Bitter</option>
                     </select>
                 </div>
             </div>
+            <!--Second row of feature input-->
             <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-sm"></div>
-                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <label for="protein">Protein</label>
+                    <select type="text" id="protein" name="protein">
+                        <option selected>Not sure</option>
+                        <option>Beef</option>
+                        <option>Pork</option>
+                        <option>ORANGE</option>
+                        <option>BLACK</option>
+                        <option>Chicken</option>
+                        <option>Fish</option>
+                        <option>Shell fish</option>
+                        <option>Vegetarian</option>
+                        <option>No meat</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="type">Type</label>
+                    <select type="text" id="type" name="type">
+                        <option selected>Not sure</option>
+                        <option>Boiled</option>
+                        <option>Fried</option>
+                        <option>Steamed</option>
+                        <option>Baked</option>
+                        <option>Raw</option>
+                        <option>Barbeque</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="carbohydrate">Carbohydrate</label>
+                    <select type="text" id="carbohydrate" name="carbohydrate">
+                        <option selected>Not sure</option>
+                        <option>Noodles</option>
+                        <option>Rice</option>
+                    </select>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-sm"></div>
-                <div class="col-sm"></div>
-            </div>
+            <!--Third row of feature input-->
+<!--            <div class="row">-->
+<!--                <div class="col-sm">-->
+<!--                    <label for="color">Color</label>-->
+<!--                    <select type="text" id="choice7" name="choice7">-->
+<!--                        <option selected>GREEN</option>-->
+<!--                        <option>BLUE</option>-->
+<!--                        <option>RED</option>-->
+<!--                        <option>ORANGE</option>-->
+<!--                        <option>BLACK</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                <div class="col-sm">-->
+<!--                    <label for="protein">Protein</label>-->
+<!--                    <select type="text" id="choice8" name="choice8">-->
+<!--                        <option selected>GREEN</option>-->
+<!--                        <option>BLUE</option>-->
+<!--                        <option>RED</option>-->
+<!--                        <option>ORANGE</option>-->
+<!--                        <option>BLACK</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                <div class="col-sm">-->
+<!--                    <label for="country">Country</label>-->
+<!--                    <select type="text" id="choice9" name="choice9">-->
+<!--                        <option selected>GREEN</option>-->
+<!--                        <option>BLUE</option>-->
+<!--                        <option>RED</option>-->
+<!--                        <option>ORANGE</option>-->
+<!--                        <option>BLACK</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
             <input type="submit" value="Search"/>
         </form>
     </div>
@@ -57,6 +118,12 @@
         <h4>1. {{ test1 }}</h4>
         <h4>2. {{ test2 }}</h4>
         <h4>3. {{ test3 }}</h4>
+        <h4>4. {{ test4 }}</h4>
+        <h4>5. {{ test5 }}</h4>
+        <h4>6. {{ test6 }}</h4>
+        <h4>7. {{ test7 }}</h4>
+        <h4>8. {{ test8 }}</h4>
+        <h4>9. {{ test9 }}</h4>
     </div>
 </div>
 {% endblock %}

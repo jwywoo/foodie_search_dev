@@ -8,14 +8,22 @@ def main(request):
     return render(request, 'food/main.html', {})
 
 
+# Available Options
+# taste
+# country
+# color
+# protein
+# type
+# carbohydrate
 def searching_foods(request):
     if request.method == 'POST':
-        context = {
-            'test1': request.POST['color'],
-            'test2': request.POST['protein'],
-            'test3': request.POST['country'],
-        }
-        return render(request, 'food/main.html', context=context)
+        taste = request.POST['taste']
+        country = request.POST['country']
+        color = request.POST['color']
+        protein = request.POST['protein']
+        type_food = request.POST['type']
+        carbohydrate = request.POST['carbohydrate']
+        return render(request, 'food/main.html', context={})
 
 
 def food_detail(request):
