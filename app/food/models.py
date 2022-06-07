@@ -108,8 +108,12 @@ class Food(models.Model):
     ]
     carbohydrate = models.CharField(
         max_length=2,
-        choices=None,
+        choices=CAR_CHOICES,
         default=UNDECIDED,
     )
+
     # list of descriptions for phase 2
     # descriptions = []
+
+    def __str__(self):
+        return self.original_name

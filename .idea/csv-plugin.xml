@@ -38,7 +38,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/app/food/views.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/app/templates/food/main.html">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/app/user/models.py">
           <value>
             <Attribute>
               <option name="separator" value="," />
