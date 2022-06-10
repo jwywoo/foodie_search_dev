@@ -5,12 +5,14 @@ class Food(models.Model):
     english_name = models.CharField(max_length=100)
     original_name = models.CharField(max_length=100)
     UNDECIDED = 'UD'
+    NOT_INCLUDED = 'NA'
     # country choices
     KOREA = 'KR'
     JAPAN = 'JP'
     COUNTRY_CHOICES = [
         (KOREA, 'Korean'),
         (JAPAN, 'Japanese'),
+        (NOT_INCLUDED, 'Not Applied'),
         (UNDECIDED, 'Not sure')
     ]
     country = models.CharField(
@@ -28,6 +30,7 @@ class Food(models.Model):
         (RED, 'Red'),
         (BROWN, 'Brown'),
         (BLACK, 'Black'),
+        (NOT_INCLUDED, 'Not Applied'),
         (UNDECIDED, 'Not sure')
     ]
     color = models.CharField(
@@ -47,6 +50,7 @@ class Food(models.Model):
         (SOUR, 'Sour'),
         (SALTY, 'Salty'),
         (BITTER, 'Bitter'),
+        (NOT_INCLUDED, 'Not Applied'),
         (UNDECIDED, 'Not sure'),
     ]
     taste = models.CharField(
@@ -60,7 +64,6 @@ class Food(models.Model):
     FISH = 'FS'
     SHELLFISH = 'SF'
     CHICKEN = 'CK'
-    NOMEAT = 'NM'
     VEGETARIAN = 'VG'
     PROTEIN_CHOICES = [
         (BEEF, 'Beef'),
@@ -69,7 +72,7 @@ class Food(models.Model):
         (FISH, 'Fish'),
         (VEGETARIAN, 'Vegetarian'),
         (CHICKEN, 'Chicken'),
-        (NOMEAT, 'No protein'),
+        (NOT_INCLUDED, 'No Meat'),
         (UNDECIDED, 'Not sure'),
     ]
     protein = models.CharField(
@@ -91,6 +94,7 @@ class Food(models.Model):
         (BAKED, 'Baked'),
         (BARBEQUE, 'Barbeque'),
         (RAW, 'Raw'),
+        (NOT_INCLUDED, 'Not Applied'),
         (UNDECIDED, 'Not sure'),
     ]
     type = models.CharField(
@@ -104,6 +108,7 @@ class Food(models.Model):
     CAR_CHOICES = [
         (NOODLES, "Noodles"),
         (RICE, "Rice"),
+        (NOT_INCLUDED, 'Not Applied'),
         (UNDECIDED, "Not sure"),
     ]
     carbohydrate = models.CharField(
@@ -111,6 +116,9 @@ class Food(models.Model):
         choices=CAR_CHOICES,
         default=UNDECIDED,
     )
+    food_description = models.TextField(max_length=1000)
+    food_link = models.URLField(max_length=200)
+    food_image = models.ImageField(upload_to='food')
 
     # list of descriptions for phase 2
     # descriptions = []

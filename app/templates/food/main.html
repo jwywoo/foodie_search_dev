@@ -15,6 +15,7 @@
                         <option selected value="UD">Not sure</option>
                         <option value="KR">Korea</option>
                         <option value="JP">Japan</option>
+                        <option value="NA">None of the above</option>
                     </select>
                 </div>
                 <div class="col-sm">
@@ -25,6 +26,7 @@
                         <option value="RD">Red</option>
                         <option value="BL">Black</option>
                         <option value="BR">Brown</option>
+                        <option value="NA">None of the above</option>
                     </select>
                 </div>
                 <div class="col-sm">
@@ -36,6 +38,7 @@
                         <option value="SR">Sour</option>
                         <option value="SL">Salty</option>
                         <option value="BT">Bitter</option>
+                        <option value="NA">None of the above</option>
                     </select>
                 </div>
             </div>
@@ -51,7 +54,7 @@
                         <option value="FS">Fish</option>
                         <option value="SF">Shell fish</option>
                         <option value="VG">Vegetarian</option>
-                        <option value="NM">No meat</option>
+                        <option value="NA">No meat</option>
                     </select>
                 </div>
                 <div class="col-sm">
@@ -64,6 +67,7 @@
                         <option value="BE">Baked</option>
                         <option value="BQ">Raw</option>
                         <option value="RW">Barbeque</option>
+                        <option value="NA">None of the above</option>
                     </select>
                 </div>
                 <div class="col-sm">
@@ -72,6 +76,7 @@
                         <option selected value="UD">Not sure</option>
                         <option value="ND">Noodles</option>
                         <option value="RE">Rice</option>
+                        <option value="NA">None of the above</option>
                     </select>
                 </div>
             </div>
@@ -113,16 +118,7 @@
     </div>
     <div class="col-sm">
         <h3>Here is the output</h3>
-        <h4> Result : {{ test.original_name }}</h4>
-<!--        <h4>1. {{ test1 }}</h4>-->
-<!--        <h4>2. {{ test2 }}</h4>-->
-<!--        <h4>3. {{ test3 }}</h4>-->
-<!--        <h4>4. {{ test4 }}</h4>-->
-<!--        <h4>5. {{ test5 }}</h4>-->
-<!--        <h4>6. {{ test6 }}</h4>-->
-<!--        <h4>7. {{ test7 }}</h4>-->
-<!--        <h4>8. {{ test8 }}</h4>-->
-<!--        <h4>9. {{ test9 }}</h4>-->
+        <h4> Result : {{ text }}</h4>
     </div>
 </div>
 {% endblock %}

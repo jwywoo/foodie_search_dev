@@ -40,11 +40,9 @@ def calculating(selected_features, foods):
             denominator += 1
         print(food.original_name)
         possibility = denominator/numerator
-        print(possibility)
-        if temp <= possibility:
-            result = food
-            temp = possibility
-    return result
+        if 0.4 <= possibility:
+            result_list.append(food)
+    return result_list
 
 
 # Available Options
@@ -78,15 +76,13 @@ def searching_foods(request):
                                        type=type_food,
                                        carbohydrate=carbohydrate)
         if not selected:
+            calculating(selected_features=feature_selected, food=Food.objects.all())
             context = {
-                'test': calculating(selected_features=feature_selected, foods=Food.objects.all())
+                'text': "Wait for the results"
             }
             return render(request, 'food/main.html', context=context)
         else:
-            context = {
-                'test': calculating(selected_features=feature_selected, foods=Food.objects.all())
-            }
-            return render(request, 'food/main.html', context)
+            return render(request, 'food/main.html', selected)
 
 
 def food_detail(request):
