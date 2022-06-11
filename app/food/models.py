@@ -116,9 +116,9 @@ class Food(models.Model):
         choices=CAR_CHOICES,
         default=UNDECIDED,
     )
-    food_description = models.TextField(max_length=1000)
-    food_link = models.URLField(max_length=200)
-    food_image = models.ImageField(upload_to='food')
+    food_description = models.TextField(max_length=1000, blank=True)
+    food_link = models.URLField(max_length=200, blank=True)
+    food_image = models.ImageField(upload_to='food', blank=True)
 
     # list of descriptions for phase 2
     # descriptions = []

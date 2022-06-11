@@ -14,10 +14,11 @@ def calculating(selected_features, foods):
     result_list = []
     numerator = 0
     for feature in selected_features.keys():
-        if selected_features[feature] is not 'UD':
+        print(selected_features[feature] == 'UD')
+        if selected_features[feature] != 'UD':
             numerator += 1
-    temp = 0
-    result = None
+    if numerator == 0:
+        return 0
     for food in foods:
         denominator = 0
         # country
@@ -38,9 +39,11 @@ def calculating(selected_features, foods):
         # carbohydrate
         if selected_features['carbohydrate'] == food.carbohydrate:
             denominator += 1
-        print(food.original_name)
-        possibility = denominator/numerator
+        possibility = denominator / numerator
+        print(possibility)
         if 0.4 <= possibility:
+            print(possibility)
+            print(food)
             result_list.append(food)
     return result_list
 
@@ -75,15 +78,22 @@ def searching_foods(request):
                                        protein=protein,
                                        type=type_food,
                                        carbohydrate=carbohydrate)
+        print(selected)
         if not selected:
-            calculating(selected_features=feature_selected, food=Food.objects.all())
+            print("this one")
+            foods = calculating(selected_features=feature_selected, foods=Food.objects.all())
+            if foods == 0:
+                return render(request, 'food/main.html', {"warning": "You need to choose at least one feature"})
             context = {
-                'text': "Wait for the results"
+                'foods': foods,
             }
             return render(request, 'food/main.html', context=context)
         else:
+            print("the other")
             return render(request, 'food/main.html', selected)
 
 
-def food_detail(request):
-    pass
+def food_detail(request, pk):
+    food = Food.objects.get(pk=pk)
+
+    return render(request, 'food/food_detail.html', context={})
