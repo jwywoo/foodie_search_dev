@@ -11,8 +11,22 @@
 </head>
 <body>
 <div class="container">
-  {% block content %}
-  {% endblock %}
+    <div class="container">
+			<a href="{% url 'food:main' %}" class="navbar-brand">Foodie Search</a>
+			<div class="">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'user:login' %}">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'user:user-create' %}">Signup</a>
+					</li>
+					<li class="nav-item"></li>
+				</ul>
+				</div>
+		</div>
+    {% block content %}
+    {% endblock %}
 </div>
 </body>
 </html>
