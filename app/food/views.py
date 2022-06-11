@@ -97,3 +97,11 @@ def food_detail(request, pk):
     food = Food.objects.get(pk=pk)
 
     return render(request, 'food/food_detail.html', context={})
+
+
+def user_add_favorite(request):
+    pass
+
+
+def user_removing_favorite(request):
+    pass

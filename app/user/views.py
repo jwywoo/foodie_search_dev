@@ -1,18 +1,38 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from django.contrib.auth import authenticate, login
+
+from .forms import SignupForm
 
 
 # Create your views here.
 def user_create(request):
-    pass
+    if request.method == 'POST':
+        form = SignupForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.signup()
+            login(request, user)
+            return redirect('main.html')
+    else:
+        form = SignupForm()
 
+        context = {
+            'form': form
+        }
+        return render(request,'', context)
 
-def user_login(request):
-    pass
+def user_login(request, user):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['passoword']
 
+        user = authenticate(request, username=user, password=password)
 
-def user_add_favorite(request):
-    pass
+        if user is not None:
+            login(request, user)
+            return redirect('main.html')
 
-
-def user_removing_favorite(request):
-    pass
+        else:
+            return redirect('login.html')
+    else:
+        return render(request, 'login.html')
