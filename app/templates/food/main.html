@@ -1,128 +1,23 @@
 {% extends 'common_css.html'%}
-
 {% block content %}
 <h1>This is main</h1>
 <div class="row">
     <div class="col-sm">
-        <h3>Here is the input</h3>
-        <form action="{% url 'food:searching-food'%}" method="POST">
-            {% csrf_token %}
-            <!--First row of feature input-->
-            <div class="row">
-                <div class="col-sm">
-                    <label for="country">Country</label>
-                    <select type="text" id="country" name="country">
-                        <option selected value="UD">Not sure</option>
-                        <option value="KR">Korea</option>
-                        <option value="JP">Japan</option>
-                    </select>
-                </div>
-                <div class="col-sm">
-                    <label for="color">Color</label>
-                    <select type="text" id="color" name="color">
-                        <option selected value="UD">Not sure</option>
-                        <option value="YL">Yellow</option>
-                        <option value="RD">Red</option>
-                        <option value="BL">Black</option>
-                        <option value="BR">Brown</option>
-                    </select>
-                </div>
-                <div class="col-sm">
-                    <label for="taste">Taste</label>
-                    <select type="text" id="taste" name="taste">
-                        <option selected value="UD">Not sure</option>
-                        <option value="SW">Sweet</option>
-                        <option value="SC">Spicy</option>
-                        <option value="SR">Sour</option>
-                        <option value="SL">Salty</option>
-                        <option value="BT">Bitter</option>
-                    </select>
-                </div>
-            </div>
-            <!--Second row of feature input-->
-            <div class="row">
-                <div class="col-sm">
-                    <label for="protein">Protein</label>
-                    <select type="text" id="protein" name="protein">
-                        <option selected value="UD">Not sure</option>
-                        <option value="BF">Beef</option>
-                        <option value="PR">Pork</option>
-                        <option value="CK">Chicken</option>
-                        <option value="FS">Fish</option>
-                        <option value="SF">Shell fish</option>
-                        <option value="VG">Vegetarian</option>
-                        <option value="NM">No meat</option>
-                    </select>
-                </div>
-                <div class="col-sm">
-                    <label for="type">Type</label>
-                    <select type="text" id="type" name="type">
-                        <option selected value="UD">Not sure</option>
-                        <option value="BD">Boiled</option>
-                        <option value="FR">Fried</option>
-                        <option value="ST">Steamed</option>
-                        <option value="BE">Baked</option>
-                        <option value="BQ">Raw</option>
-                        <option value="RW">Barbeque</option>
-                    </select>
-                </div>
-                <div class="col-sm">
-                    <label for="carbohydrate">Carbohydrate</label>
-                    <select type="text" id="carbohydrate" name="carbohydrate">
-                        <option selected value="UD">Not sure</option>
-                        <option value="ND">Noodles</option>
-                        <option value="RE">Rice</option>
-                    </select>
-                </div>
-            </div>
-            <!--Third row of feature input-->
-<!--            <div class="row">-->
-<!--                <div class="col-sm">-->
-<!--                    <label for="color">Color</label>-->
-<!--                    <select type="text" id="choice7" name="choice7">-->
-<!--                        <option selected>GREEN</option>-->
-<!--                        <option>BLUE</option>-->
-<!--                        <option>RED</option>-->
-<!--                        <option>ORANGE</option>-->
-<!--                        <option>BLACK</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--                <div class="col-sm">-->
-<!--                    <label for="protein">Protein</label>-->
-<!--                    <select type="text" id="choice8" name="choice8">-->
-<!--                        <option selected>GREEN</option>-->
-<!--                        <option>BLUE</option>-->
-<!--                        <option>RED</option>-->
-<!--                        <option>ORANGE</option>-->
-<!--                        <option>BLACK</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--                <div class="col-sm">-->
-<!--                    <label for="country">Country</label>-->
-<!--                    <select type="text" id="choice9" name="choice9">-->
-<!--                        <option selected>GREEN</option>-->
-<!--                        <option>BLUE</option>-->
-<!--                        <option>RED</option>-->
-<!--                        <option>ORANGE</option>-->
-<!--                        <option>BLACK</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--            </div>-->
-            <input type="submit" value="Search"/>
-        </form>
+        {% include 'include/foodinput.html' %}
+
     </div>
     <div class="col-sm">
         <h3>Here is the output</h3>
-        <h4> Result : {{ test.original_name }}</h4>
-<!--        <h4>1. {{ test1 }}</h4>-->
-<!--        <h4>2. {{ test2 }}</h4>-->
-<!--        <h4>3. {{ test3 }}</h4>-->
-<!--        <h4>4. {{ test4 }}</h4>-->
-<!--        <h4>5. {{ test5 }}</h4>-->
-<!--        <h4>6. {{ test6 }}</h4>-->
-<!--        <h4>7. {{ test7 }}</h4>-->
-<!--        <h4>8. {{ test8 }}</h4>-->
-<!--        <h4>9. {{ test9 }}</h4>-->
+        {% if foods %}
+        {% for food in foods %}
+            {% include 'include/foodcard.html' %}
+        {% endfor %}
+        {% else %}
+        <h3>Here will be the output</h3>
+        {% endif %}
+        {% if warning %}
+        <h3>{{ warning }}</h3>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
