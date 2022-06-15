@@ -95,13 +95,16 @@ def searching_foods(request):
 
 def food_detail(request, pk):
     food = Food.objects.get(pk=pk)
+    context = {
+        'food': food
+    }
+    return render(request, 'food/food_detail.html', context)
 
-    return render(request, 'food/food_detail.html', context={})
 
+def user_add_favorite(request, pk):
 
-def user_add_favorite(request):
     pass
 
 
-def user_removing_favorite(request):
+def user_removing_favorite(request, pk):
     pass

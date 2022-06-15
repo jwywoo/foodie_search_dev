@@ -1,4 +1,11 @@
 {% extends 'common_css.html'%}
 {% block content %}
+<!--{{ food.attribute_name }}-->
+<!--This is how you can display data you are given from views.py-->
 <h1>Food detail</h1>
+<button type="submit">Favorite</button>
+{{ food.english_name }}
+{{ food.original_name }}
+{{ food.description }}
+
 {% endblock %}
