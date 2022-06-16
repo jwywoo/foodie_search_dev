@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Food(models.Model):
@@ -122,6 +123,11 @@ class Food(models.Model):
 
     # list of descriptions for phase 2
     # descriptions = []
-
+    # food_like = models.ManyToManyField(
+    #     settings.AUTH_USER_MODEL,
+    #     blank=True,
+    #     related_name='like_food',
+    # )
+    #
     def __str__(self):
         return self.original_name

@@ -3,7 +3,11 @@
 <!--{{ food.attribute_name }}-->
 <!--This is how you can display data you are given from views.py-->
 <h1>Food detail</h1>
-<button type="submit">Favorite</button>
+<form action="{% url 'food:add_favorite' pk=food.pk %}" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-sm btn-outline-primary">favorite</button>
+</form>
+
 {{ food.english_name }}
 {{ food.original_name }}
 {{ food.description }}

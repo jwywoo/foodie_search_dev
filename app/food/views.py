@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from .models import Food
+from user.models import User
 
 
 # showing the main page
@@ -102,9 +103,17 @@ def food_detail(request, pk):
 
 
 def user_add_favorite(request, pk):
-
-    pass
+    if request.method == 'POST':
+        food = User.objects.get(pk)
+        request.user.food_like.add(food)
+        print(request.user.food_like)
+    # finding user and food
+    # add them into user favorites
+    return render(request, 'food/food_detail.html', {})
 
 
 def user_removing_favorite(request, pk):
-    pass
+    if request.method == 'POST':
+        food = User.objects.get(pk)
+        request.user.food_like.remove(food)
+    return render(request, 'food/food_detail.html', {})

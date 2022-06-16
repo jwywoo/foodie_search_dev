@@ -12,7 +12,7 @@ def user_create(request):
         if form.is_valid():
             user = form.signup()
             login(request, user)
-            return redirect('food/main.html')
+            return render(request, 'food/main.html', {})
     else:
         form = SignupForm()
 
@@ -31,14 +31,14 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('food/main.html')
+            return render(request, 'food/main.html', {})
 
         else:
-            return redirect('user/login.html')
+            return render(request, 'user/login.html')
     else:
         return render(request, 'user/login.html')
 
 
 def user_logout(request):
     logout(request)
-    return redirect('food/main.html')
+    return render(request, 'food/main.html', {})
