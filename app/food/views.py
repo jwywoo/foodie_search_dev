@@ -72,13 +72,18 @@ def searching_foods(request):
         carbohydrate = request.POST['carbohydrate']
         feature_selected['carbohydrate'] = carbohydrate
 
+        print("FEATURE SELECTED")
+        print(feature_selected)
+
         selected = Food.objects.filter(country=country,
                                        taste=taste,
                                        color=color,
                                        protein=protein,
                                        type=type_food,
                                        carbohydrate=carbohydrate)
+        print("SELECTED")
         print(selected)
+        # If not perfect match
         if not selected:
             print("this one")
             foods = calculating(selected_features=feature_selected, foods=Food.objects.all())
@@ -90,7 +95,10 @@ def searching_foods(request):
             return render(request, 'food/main.html', context=context)
         else:
             print("the other")
-            return render(request, 'food/main.html', selected)
+            context = {
+                'foods': selected,
+            }
+            return render(request, 'food/main.html', context=context)
 
 
 def food_detail(request, pk):
