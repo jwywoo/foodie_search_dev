@@ -12,3 +12,22 @@ from django.conf import settings
 
 class User(AbstractUser):
     email = models.EmailField(blank=True)
+    # liked_food = models.ManyToManyField(
+    #     'self',
+    #     through='Like',
+    #     symmetrical=True,
+    #     blank=True,
+    # )
+
+
+# class Like(models.Model):
+#     user_liked = models.ForeignKey(
+#         User,
+#         on_delete=models.CASCADE,
+#         related_name='user_like'
+#     )
+#     food_liked = models.ForeignKey(
+#         Food,
+#         on_delete=models.CASCADE,
+#         related_name='food_liked'
+#     )

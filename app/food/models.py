@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 
+from user.models import User
+
 
 class Food(models.Model):
     english_name = models.CharField(max_length=100)
@@ -123,18 +125,8 @@ class Food(models.Model):
 
     # list of descriptions for phase 2
     # descriptions = []
-    # food_like = models.ManyToManyField(
-    #     settings.AUTH_USER_MODEL,
-    #     blank=True,
-    #     related_name='like_food',
-    # )
-    #
-    like_users = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        blank=True,
-        related_name='like_posts',
-    )
 
+    user_liked = models.ManyToManyField(User)
 
     def __str__(self):
         return self.original_name
