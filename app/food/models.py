@@ -129,5 +129,15 @@ class Food(models.Model):
     #     related_name='like_food',
     # )
     #
+    like_users = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        blank=True,
+        # 1. related_name은 반대쪽(target)에서 이쪽(source)로의 연결을 만들어주는 Manager
+        # 2.  자신이 like_users에 포함이 되는 Post QuerySet Manager
+        # 3.  -> 내가 좋아요 누른 Post목록
+        related_name='like_posts',
+    )
+
+
     def __str__(self):
         return self.original_name

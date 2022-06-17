@@ -12,8 +12,3 @@ from django.conf import settings
 
 class User(AbstractUser):
     email = models.EmailField(blank=True)
-    food_like = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        blank=True,
-        related_name='like_food',
-    )
