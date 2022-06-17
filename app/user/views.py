@@ -42,3 +42,20 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return render(request, 'food/main.html', {})
+
+
+# def postsignUp(request):
+#     email = request.POST['email']
+#     password = request.POST['pass']
+#     name = request.POST['name']
+#     try:
+#         # # creating a user with the given email and password
+#         # user = authe.create_user_with_email_and_password(email, password)
+#         # uid = user['localId']
+#         # idtoken = request.session['uid']
+#         # print(uid)
+#         pass
+#     except:
+#         return render(request, "food/main.html")
+#     return render(request, "login.html")
+
