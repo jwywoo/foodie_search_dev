@@ -43,8 +43,6 @@ def calculating(selected_features, foods):
         possibility = denominator / numerator
         print(possibility)
         if 0.4 <= possibility:
-            print(possibility)
-            print(food)
             result_list.append(food)
     return result_list
 
@@ -82,11 +80,8 @@ def searching_foods(request):
                                        protein=protein,
                                        type=type_food,
                                        carbohydrate=carbohydrate)
-        print("SELECTED")
-        print(selected)
         # If not perfect match
         if not selected:
-            print("this one")
             foods = calculating(selected_features=feature_selected, foods=Food.objects.all())
             if foods == 0:
                 return render(request, 'food/main.html', {"warning": "You need to choose at least one feature"})
@@ -95,7 +90,6 @@ def searching_foods(request):
             }
             return render(request, 'food/main.html', context=context)
         else:
-            print("the other")
             context = {
                 'foods': selected,
             }
@@ -112,16 +106,11 @@ def food_detail(request, pk):
 
 def user_add_favorite(request, pk):
     if request.method == 'POST':
-        food = User.objects.get(pk)
-        request.user.food_like.add(food)
-        print(request.user.food_like)
-    # finding user and food
-    # add them into user favorites
-    return render(request, 'food/food_detail.html', {})
+        food = Food.objects.get(pk=pk)
+        food.user_liked.add(request.user)
 
 
 def user_removing_favorite(request, pk):
     if request.method == 'POST':
         food = User.objects.get(pk)
-        request.user.food_like.remove(food)
     return render(request, 'food/food_detail.html', {})

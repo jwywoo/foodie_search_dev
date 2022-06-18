@@ -126,7 +126,5 @@ class Food(models.Model):
     # list of descriptions for phase 2
     # descriptions = []
 
-    user_liked = models.ManyToManyField(User)
-
     def __str__(self):
         return self.original_name

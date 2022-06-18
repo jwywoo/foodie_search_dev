@@ -45,9 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'food.apps.FoodConfig',
+    'user.apps.UserConfig',
+    'relation.apps.RelationConfig',
     # start app
-    'food',
-    'user',
 ]
 
 MIDDLEWARE = [
