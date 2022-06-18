@@ -21,7 +21,11 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{% url 'user:user-create' %}">Signup</a>
 					</li>
-					<li class="nav-item"></li>
+					<li class="nav-item">
+						{% if user.is_authenticated %}
+						<a class="nav-link" href="{% url 'relation:user-list' %}">Favorites</a>
+						{% endif%}
+					</li>
 				</ul>
 				</div>
 		</div>

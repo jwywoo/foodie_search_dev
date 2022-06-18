@@ -3,4 +3,7 @@
 <h1>
     This is user info
 </h1>
+{% for liked in liked_food %}
+    {{ liked.english_name }}
+{% endfor %}
 {% endblock %}

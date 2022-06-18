@@ -28,5 +28,11 @@ def remove_favorite_food(request, pk):
 
 def user_list(request):
     user = User.objects.get(pk=request.user.pk)
-    liked_food = Relation.objects.filter(user_like=user)
-    return render(request, 'user/user_list.html', {'liked_food': liked_food})
+    liked_relation = Relation.objects.filter(user_like=user)
+    liked_food = []
+    for i in liked_relation:
+        liked_food.append(i.food_liked)
+    context = {
+        'liked_food': liked_food,
+    }
+    return render(request, 'user/user_detail.html', context)
