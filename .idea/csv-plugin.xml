@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/app/relation/views.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/app/templates/common_css.html">
           <value>
             <Attribute>

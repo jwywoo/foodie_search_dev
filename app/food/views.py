@@ -104,13 +104,3 @@ def food_detail(request, pk):
     return render(request, 'food/food_detail.html', context)
 
 
-def user_add_favorite(request, pk):
-    if request.method == 'POST':
-        food = Food.objects.get(pk=pk)
-        food.user_liked.add(request.user)
-
-
-def user_removing_favorite(request, pk):
-    if request.method == 'POST':
-        food = User.objects.get(pk)
-    return render(request, 'food/food_detail.html', {})
