@@ -23,7 +23,7 @@ def remove_favorite_food(request, pk):
         user = User.objects.get(pk=request.user.pk)
         food = Food.objects.get(pk=pk)
         Relation.objects.delete(user_like=user, food_liked=food)
-    return render(request, 'food/main.html')
+    return render(request, 'user/user_detail.html')
 
 
 def user_list(request):

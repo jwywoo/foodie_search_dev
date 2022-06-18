@@ -4,6 +4,12 @@
     This is user info
 </h1>
 {% for liked in liked_food %}
+<div>
     {{ liked.english_name }}
+    <form action="{% url 'relation:remove-favorite-food' pk=liked.pk %}">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</div>
 {% endfor %}
 {% endblock %}
