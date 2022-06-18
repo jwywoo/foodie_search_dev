@@ -6,6 +6,8 @@ from relation.models import Relation
 
 
 # creating relation instance between user and food with given food_pk and request.user
+# request.user.pk to get user pk(primary key == id)
+# pk in the parameter is to find food from food objects
 def add_favorite_food(request, pk):
     if request.method == 'POST':
         print(request.user.pk)
@@ -18,9 +20,13 @@ def add_favorite_food(request, pk):
 
 
 # removing relation instance between user and food with given food_pk and request.user
+# request.user.pk to get user pk(primary key == id)
+# pk in the parameter is to find food from food objects
 def remove_favorite_food(request, pk):
     if request.method == 'POST':
+        # getting user object using request.user.pk -> returned type QuerySet
         user = User.objects.get(pk=request.user.pk)
+        # getting food object using pk -> returned type QuerySet
         food = Food.objects.get(pk=pk)
         Relation.objects.delete(user_like=user, food_liked=food)
     return render(request, 'user/user_detail.html')
