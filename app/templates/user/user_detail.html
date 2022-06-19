@@ -3,10 +3,10 @@
 <h1>
     This is user info
 </h1>
-{% for liked in liked_food %}
+{% for liked in liked_foods %}
 <div>
     {{ liked.english_name }}
-    <form action="{% url 'relation:remove-favorite-food' pk=liked.pk %}">
+    <form action="{% url 'relation:remove-favorite-food' pk=liked.pk %}" method="POST">
         {% csrf_token %}
         <button type="submit">Delete</button>
     </form>

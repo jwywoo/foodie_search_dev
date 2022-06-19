@@ -3,8 +3,9 @@
 <!--{{ food.attribute_name }}-->
 <!--This is how you can display data you are given from views.py-->
 <h1>Food detail</h1>
+{{ message }}
 <form action="{% url 'relation:add-favorite-food' pk=food.pk %}" method="POST">
-                    {% csrf_token %}
+    {% csrf_token %}
     <button type="submit" class="btn btn-sm btn-outline-secondary">Favorite</button>
 </form>
 {{ food.pk }}

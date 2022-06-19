@@ -8,5 +8,5 @@ urlpatterns = [
     path('add/<int:pk>/', add_favorite_food, name='add-favorite-food'),
     # to delete food favorite
     path('remove/<int:pk>/', remove_favorite_food, name='remove-favorite-food'),
-    path('userlikes/', user_list, name='user-list'),
+    path('userlikes/', user_favorites, name='user-list'),
 ]

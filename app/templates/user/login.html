@@ -1,11 +1,12 @@
 {% extends 'common_css.html' %}
 {% block content %}
 <div>
-	<form action="" method="POST">
-		{% csrf_token %}
-		<input type="text" name="username">
-		<input type="password" name="password">
-		<button type="submit" class="btn btn-info">login</button>
-	</form>
+    <h5>{{ message }}</h5>
+    <form action="{% url 'user:login' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button type="submit" class="btn btn-info">Login</button>
+    </form>
 </div>
 {% endblock %}
