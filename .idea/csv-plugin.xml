@@ -73,6 +73,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/app/templates/food/food_detail.html">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/app/templates/food/food_detail_im.html">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/app/templates/food/main.html">
           <value>
             <Attribute>
@@ -105,6 +119,13 @@
           <value>
             <Attribute>
               <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/app/templates/user/user_detail_im.html">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
             </Attribute>
           </value>
         </entry>
