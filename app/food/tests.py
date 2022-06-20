@@ -1,5 +1,4 @@
 from django.test import TestCase
-
 from .models import Food
 from .views import calculating, searching_foods
 
