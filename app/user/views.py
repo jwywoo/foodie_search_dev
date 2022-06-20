@@ -15,7 +15,7 @@ def user_login(request):
             login(request, user)
             return render(request, 'food/main.html')
         else:
-            return render(request, 'food/main.html', {'message': 'Wrong password/username'})
+            return render(request, 'user/login.html', {'message': 'Wrong password/username'})
     else:
         return render(request, 'user/login.html')
 
