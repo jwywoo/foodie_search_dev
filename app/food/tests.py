@@ -88,6 +88,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Spicy Ramen')
 
+    # Integration tests searhing foods -> calculating
     #######################################################
     # ~~~~~~~~~~~~ TESTS FOR SEARCHING_FOODS ~~~~~~~~~~~~ #
     #######################################################
